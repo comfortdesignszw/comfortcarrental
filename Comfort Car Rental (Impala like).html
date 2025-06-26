@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comfort Car Rental Services - Premium Vehicle Rentals</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .hero-slider { transition: transform 0.5s ease-in-out; }
+        .fade-in { animation: fadeIn 0.6s ease-in; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .card-hover { transition: all 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1); }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg fixed w-full z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center">
+                    <div class="flex-shrink-0">
+                        <h1 class="text-2xl font-bold text-blue-600">Comfort Car Rental</h1>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-gray-700 hover:text-blue-600 font-medium">Home</a>
+                    <a href="#vehicles" class="text-gray-700 hover:text-blue-600 font-medium">Vehicles</a>
+                    <a href="#services" class="text-gray-700 hover:text-blue-600 font-medium">Services</a>
+                    <a href="#testimonials" class="text-gray-700 hover:text-blue-600 font-medium">Testimonials</a>
+                    <a href="#contact" class="text-gray-700 hover:text-blue-600 font-medium">Contact</a>
+                    <button onclick="openBookingModal()" class="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition">Book Now</button>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button onclick="toggleMobileMenu()" class="text-gray-700">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="hidden md:hidden bg-white border-t">
+            <div class="px-2 pt-2 pb-3 space-y-1">
+                <a href="#home" class="block px-3 py-2 text-gray-700">Home</a>
+                <a href="#vehicles" class="block px-3 py-2 text-gray-700">Vehicles</a>
+                <a href="#services" class="block px-3 py-2 text-gray-700">Services</a>
+                <a href="#testimonials" class="block px-3 py-2 text-gray-700">Testimonials</a>
+                <a href="#contact" class="block px-3 py-2 text-gray-700">Contact</a>
+                <button onclick="openBookingModal()" class="block w-full text-left px-3 py-2 bg-blue-600 text-white rounded">Book Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section with Slider -->
+    <section id="home" class="pt-16 relative overflow-hidden">
+        <div class="hero-container relative h-screen">
+            <div id="heroSlider" class="flex transition-transform duration-500 ease-in-out h-full">
+                <!-- Slide 1 -->
+                <div class="min-w-full h-full relative">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    <img src="https://www.enterprise.com/en/exotic-car-rental/_jcr_content/root/container/container/container_1060086341/teaser.coreimg.jpeg/1708936909048/explore-our-vehicles-1920x1080-vehicles.jpeg" alt="Luxury Car Fleet" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center text-white max-w-4xl mx-auto px-4">
+                            <h1 class="text-5xl md:text-6xl font-bold mb-6 fade-in">What type of car do you want to drive?</h1>
+                            <h2 class="text-2xl md:text-3xl mb-8 fade-in">Our Range of <span class="text-yellow-400">Vehicles</span></h2>
+                            <button onclick="scrollToSection('contact')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition fade-in">Contact Us</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="min-w-full h-full relative">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    <img src="https://limoserviceinnyc.com/wp-content/uploads/2024/10/Private-Chauffeur-Service.jpg" alt="Professional Chauffeur Service" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center text-white max-w-4xl mx-auto px-4">
+                            <h1 class="text-5xl md:text-6xl font-bold mb-6">Amazing service making every hire a comfort experience!!</h1>
+                            <h2 class="text-2xl md:text-3xl mb-8">Our Range of <span class="text-yellow-400">Vehicles</span></h2>
+                            <button onclick="scrollToSection('contact')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition">Contact Us</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Slide 3 -->
+                <div class="min-w-full h-full relative">
+                    <div class="absolute inset-0 bg-black bg-opacity-40"></div>
+                    <img src="https://luxuryrideusa.com/wp-content/uploads/2023/04/Luxury-Car-Service-NYC-Premium-Airport-Transfers-NYC-EWR-JFK-LGA-960-540-min.jpg" alt="Airport Transfer Service" class="w-full h-full object-cover">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="text-center text-white max-w-4xl mx-auto px-4">
+                            <h1 class="text-5xl md:text-6xl font-bold mb-6">Amazing service making every hire a comfort experience!!</h1>
+                            <h2 class="text-2xl md:text-3xl mb-8">Our Range of <span class="text-yellow-400">Vehicles</span></h2>
+                            <button onclick="scrollToSection('contact')" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg text-lg transition">Contact Us</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Slider Navigation -->
+            <button onclick="previousSlide()" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button onclick="nextSlide()" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-20 hover:bg-opacity-30 text-white p-3 rounded-full transition">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+            <!-- Slider Dots -->
+            <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <button onclick="goToSlide(0)" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition slide-dot active"></button>
+                <button onclick="goToSlide(1)" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition slide-dot"></button>
+                <button onclick="goToSlide(2)" class="w-3 h-3 rounded-full bg-white bg-opacity-50 hover:bg-opacity-100 transition slide-dot"></button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Welcome Section -->
+    <section class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h3 class="text-lg text-blue-600 font-semibold mb-2">WELCOME TO COMFORT CAR RENTAL SERVICES</h3>
+            <h2 class="text-4xl font-bold text-gray-900 mb-4">Every hire is a comfort experience !!!</h2>
+            <h3 class="text-2xl font-semibold text-gray-700 mb-8">Great Rental For You</h3>
+            <h4 class="text-xl text-gray-600">What kind of car do you want?</h4>
+        </div>
+    </section>
+
+    <!-- Vehicle Showcase -->
+    <section id="vehicles" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Premium Fleet</h2>
+                <p class="text-lg text-gray-600">Choose from our extensive collection of premium vehicles</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Vehicle Card 1 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://www.avis.com/content/dam/cars/xl/2024/honda/2024-honda-cr-v-ex-4wd-suv-red_featured.png" alt="Honda CRV" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Mini SUVs</h3>
+                        <p class="text-gray-600 mb-4">Honda CRV, Toyota Vanguard, Rav4 and similar (5 SEATER)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600">From $75/day</span>
+                            <button onclick="bookVehicle('Mini SUVs', 45)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vehicle Card 2 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://www.avis.com/content/dam/cars/l/2021/toyota/2021-toyota-tacoma-trd-off-road-crew-cab-4wd-pick-up-white_featured.png" alt="Double Cabs" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Double Cabs</h3>
+                        <p class="text-gray-600 mb-4">Offroad and Rugged Vehicles- 4X4s, Toyota Hilux, Ford Ranger or similar (4-5 SEATER).</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600"> From $105/day</span> 
+                            <button onclick="bookVehicle('Double Cab', 85)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Vehicle Card 3 -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://www.uberlimousine.com/assets/images/lincoln-sedan-676x451.jpg" alt="Lincoln Sedan" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Executive Luxury Sedans</h3>
+                        <p class="text-gray-600 mb-4">Mercedes E & C-Class, BMW, Audi, Lincoln Sedans and similar (5 SEATER)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600"> From $115/day</span>
+                            <button onclick="bookVehicle('Executive Luxury Sedan', 115)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!--Vehicle Card 4-->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://www.avis.com/content/dam/cars/l/2023/ford/2023-ford-expedition-limited-max-suv-black_featured.png" alt="Full-Size SUV" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Full-Size SUV</h3>
+                        <p class="text-gray-600 mb-4">Toyota Fortuner, Isuzu MUX, Chevrolet Trailblazer and similar (7-8 SEATER)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600"> From $110/day</span>
+                            <button onclick="bookVehicle('Executive Luxury Sedan', 115)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!--Vehicle Card 5-->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://www.avis.com/content/dam/cars/l/2020/ford/2020-ford-transit-350-xlt-low-roof-passenger-van-white_featured.png" alt="Quantum" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Quantum</h3>
+                        <p class="text-gray-600 mb-4">Toyota Hiace, Baby Quantum, Nissan NV350 and similar (8-15 SEATER)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600"> From $120/day</span>
+                            <button onclick="bookVehicle('Executive Luxury Sedan', 115)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+                <!--Vehicle Card 6-->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden card-hover">
+                    <img src="https://www.avis.com/content/dam/cars/l/2020/toyota/2020-toyota-corolla-le-sedan-grey_featured.png" alt="Standard Economy Sedan" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-900 mb-2">Standard Economy Sedans</h3>
+                        <p class="text-gray-600 mb-4">Toyota Axio, Camry, Quest, VW Jetta, Bora, Chevrolet Cruize and similar (4-5 SEATER)</p>
+                        <div class="flex justify-between items-center">
+                            <span class="text-2xl font-bold text-blue-600"> From $55/day</span>
+                            <button onclick="bookVehicle('Executive Luxury Sedan', 115)" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition">Book Now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Our Services</h2>
+                <p class="text-lg text-gray-600">We provide comprehensive car rental solutions for all your needs</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Service 1 -->
+                <div class="text-center card-hover p-6 rounded-lg">
+                    <img src="https://www.enterprise.com/en/exotic-car-rental/_jcr_content/root/container/container/container/image.coreimg.jpeg/1667428288671/hero-all-exotic-vehicles-1920x565.jpeg" alt="Self Drive Rentals" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">SELF DRIVE RENTALS</h3>
+                    <p class="text-gray-600">Rent the vehicle of your choice from our large selection of vehicles to drive to your destination in comfort and style.</p>
+                </div>
+                <!-- Service 2 -->
+                <div class="text-center card-hover p-6 rounded-lg">
+                    <img src="https://images.squarespace-cdn.com/content/v1/5b6f572a96d45509545ba4ba/1591119814284-QLHNRLRSCD2MEZOLWVWM/PC1.jpg" alt="Chauffeur Driven Rentals" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">CHAUFFEUR DRIVEN RENTALS</h3>
+                    <p class="text-gray-600">We have specially trained drivers for that chauffeured experience. Punctuality and professionalism are their key attributes.</p>
+                </div>
+                <!-- Service 3 -->
+                <div class="text-center card-hover p-6 rounded-lg">
+                    <img src="https://limoserviceinnyc.com/wp-content/uploads/2019/01/Airport-Transfer-Service-1.jpg" alt="Airport Transfers" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">AIRPORT TRANSFERS</h3>
+                    <p class="text-gray-600">Don't get delayed after checking in, get on the road right away to your destinations with our efficient airport transfer service.</p>
+                </div>
+                <!-- Service 4 -->
+                <div class="text-center card-hover p-6 rounded-lg">
+                    <img src="https://www.mundilimos.com/wp-content/uploads/2021/02/Premium-transportation-services.jpg" alt="Shuttle Services" class="w-full h-40 object-cover rounded-lg mb-4">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">SHUTTLE SERVICES</h3>
+                    <p class="text-gray-600">Best for groups, we offer shuttle services between any destination. Comfortable and reliable group transportation.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">CLIENT TESTIMONIALS</h2>
+                <p class="text-lg text-gray-600">What our satisfied customers say about us</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Testimonial 1 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60x60/4F46E5/FFFFFF?text=JM" alt="Joyce Mazorodze" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Joyce Mazorodze</h4>
+                            <p class="text-gray-600 text-sm">Happy Client</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"I want to thank Comfort Car Rental Services for promptly dealing with my query. Lovely customer care indeed."</p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 2 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60x60/059669/FFFFFF?text=TM" alt="Tendai Mhizha" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Tendai Mhizha</h4>
+                            <p class="text-gray-600 text-sm">Happy Client</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Your services are wow, you are on top of the game I'm very, very impressed."</p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <!-- Testimonial 3 -->
+                <div class="bg-white p-6 rounded-lg shadow-lg card-hover">
+                    <div class="flex items-center mb-4">
+                        <img src="https://via.placeholder.com/60x60/DC2626/FFFFFF?text=RM" alt="Rejoice Muza" class="w-12 h-12 rounded-full mr-4">
+                        <div>
+                            <h4 class="font-bold text-gray-900">Rejoice Muza</h4>
+                            <p class="text-gray-600 text-sm">Happy Client</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-700 italic">"Amazing service that made my wedding day extraordinary! The chauffeur was so professional and the car was immaculate."</p>
+                    <div class="flex text-yellow-400 mt-3">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Section -->
+    <section class="py-16 bg-blue-600 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-4xl font-bold mb-4">WHERE DO YOU WANT TO GO?</h2>
+            <p class="text-xl mb-8">We'll make sure you get to your destination safe and comfortable!</p>
+            <button onclick="openBookingModal()" class="bg-white text-blue-600 font-bold py-4 px-8 rounded-lg text-lg hover:bg-gray-100 transition">Book Your Ride Now</button>
+        </div>
+    </section>
+
+    <!-- Newsletter Section -->
+    <section class="py-16 bg-gray-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-bold mb-4">ENJOY 15% OFF</h2>
+            <p class="text-lg mb-8">Sign up to receive the latest offers and news in industry.</p>
+            <div class="max-w-md mx-auto">
+                <form onsubmit="subscribeNewsletter(event)" class="flex">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email address" class="flex-1 px-4 py-3 rounded-l-lg text-gray-900" required>
+                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-6 py-3 rounded-r-lg transition">Subscribe</button>
+                </form>
+                <p class="text-sm text-gray-400 mt-4">Offer valid only for new email subscribers. Exclusions apply.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900 mb-4">Contact Us</h2>
+                <p class="text-lg text-gray-600">Get in touch with us for any inquiries or bookings</p>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Contact Form -->
+                <div class="bg-gray-50 p-8 rounded-lg">
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Send us a Message</h3>
+                    <form onsubmit="submitContactForm(event)">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">First Name</label>
+                                <input type="text" id="firstName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Last Name</label>
+                                <input type="text" id="lastName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                            </div>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="contactEmail" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Phone</label>
+                            <input type="tel" id="contactPhone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                        </div>
+                        <div class="mb-6">
+                            <label class="block text-gray-700 font-medium mb-2">Message</label>
+                            <textarea id="contactMessage" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required></textarea>
+                        </div>
+                        <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Send Message</button>
+                    </form>
+                </div>
+                <!-- Contact Info -->
+                <div>
+                    <h3 class="text-2xl font-bold text-gray-900 mb-6">Get in Touch</h3>
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-map-marker-alt text-blue-600 text-xl mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Address</h4>
+                                <p class="text-gray-600">123 Main Street, Downtown<br>City, State 12345</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-phone text-blue-600 text-xl mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Phone</h4>
+                                <p class="text-gray-600">+1 (555) 123-4567</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-envelope text-blue-600 text-xl mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Email</h4>
+                                <p class="text-gray-600">info@comfortcarrental.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0">
+                                <i class="fas fa-clock text-blue-600 text-xl mt-1"></i>
+                            </div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-semibold text-gray-900">Business Hours</h4>
+                                <p class="text-gray-600">Mon - Fri: 8:00 AM - 6:00 PM<br>Sat - Sun: 9:00 AM - 5:00 PM</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">Comfort Car Rental</h3>
+                    <p class="text-gray-400">Your trusted partner for premium car rental services. Every hire is a memorable one!</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li>Self Drive Rentals</li>
+                        <li>Chauffeur Driven</li>
+                        <li>Airport Transfers</li>
+                        <li>Shuttle Services</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#home" class="hover:text-white transition">Home</a></li>
+                        <li><a href="#vehicles" class="hover:text-white transition">Vehicles</a></li>
+                        <li><a href="#services" class="hover:text-white transition">Services</a></li>
+                        <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Follow Us</h4>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 Comfort Car Rental Services. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="fixed inset-0 bg-black bg-opacity-50 hidden z-50 flex items-center justify-center">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-gray-900">Book Your Vehicle</h3>
+                <button onclick="closeBookingModal()" class="text-gray-500 hover:text-gray-700">
+                    <i class="fas fa-times text-xl"></i>
+                </button>
+            </div>
+            <form onsubmit="submitBooking(event)">
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Vehicle</label>
+                    <select id="bookingVehicle" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                        <option value="">Select a vehicle</option>
+                        <option value="Mini SUV">Mini SUV - $75/day</option>
+                        <option value="Double Cab">Double Cab - $105/day</option>
+                        <option value="Executive Luxury Sedan">Executive Luxury Sedan - $115/day</option>
+                        <option value="Full-Size SUV">Full-Size SUV - $110</option>
+                        <option value="Quantum">Quantum - $120/day</option>
+                        <option value="Standard Economy Sedan">Standard Economy Sedan - $55/day</option>
+                    </select>
+                </div>
+                <div class="grid grid-cols-2 gap-4 mb-4">
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Pickup Date</label>
+                        <input type="date" id="pickupDate" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-2">Return Date</label>
+                        <input type="date" id="returnDate" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                    </div>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Name</label>
+                    <input type="text" id="bookingName" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 font-medium mb-2">Email</label>
+                    <input type="email" id="bookingEmail" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+                <div class="mb-6">
+                    <label class="block text-gray-700 font-medium mb-2">Phone</label>
+                    <input type="tel" id="bookingPhone" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-blue-500 focus:border-blue-500" required>
+                </div>
+                <button type="submit" class="w-full bg-blue-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-blue-700 transition">Submit Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Hero Slider
+        let currentSlide = 0;
+        const totalSlides = 3;
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % totalSlides;
+            updateSlider();
+        }
+
+        function previousSlide() {
+            currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+            updateSlider();
+        }
+
+        function goToSlide(slideIndex) {
+            currentSlide = slideIndex;
+            updateSlider();
+        }
+
+        function updateSlider() {
+            const slider = document.getElementById('heroSlider');
+            slider.style.transform = `translateX(-${currentSlide * 100}%)`;
+            
+            // Update dots
+            const dots = document.querySelectorAll('.slide-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentSlide) {
+                    dot.classList.add('bg-opacity-100');
+                    dot.classList.remove('bg-opacity-50');
+                } else {
+                    dot.classList.add('bg-opacity-50');
+                    dot.classList.remove('bg-opacity-100');
+                }
+            });
+        }
+
+        // Auto-play slider
+        setInterval(nextSlide, 5000);
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const mobileMenu = document.getElementById('mobileMenu');
+            mobileMenu.classList.toggle('hidden');
+        }
+
+        // Smooth scrolling
+        function scrollToSection(sectionId) {
+            document.getElementById(sectionId).scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Booking Modal
+        function openBookingModal() {
+            document.getElementById('bookingModal').classList.remove('hidden');
+        }
+
+        function closeBookingModal() {
+            document.getElementById('bookingModal').classList.add('hidden');
+        }
+
+        function bookVehicle(vehicleName, price) {
+            openBookingModal();
+            document.getElementById('bookingVehicle').value = vehicleName;
+        }
+
+        // Local Storage Functions
+        function saveToLocalStorage(key, data) {
+            localStorage.setItem(key, JSON.stringify(data));
+        }
+
+        function getFromLocalStorage(key) {
+            const data = localStorage.getItem(key);
+            return data ? JSON.parse(data) : null;
+        }
+
+        // Form Submissions
+        function submitBooking(event) {
+            event.preventDefault();
+            
+            const bookingData = {
+                vehicle: document.getElementById('bookingVehicle').value,
+                pickupDate: document.getElementById('pickupDate').value,
+                returnDate: document.getElementById('returnDate').value,
+                name: document.getElementById('bookingName').value,
+                email: document.getElementById('bookingEmail').value,
+                phone: document.getElementById('bookingPhone').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Save to local storage
+            const existingBookings = getFromLocalStorage('bookings') || [];
+            existingBookings.push(bookingData);
+            saveToLocalStorage('bookings', existingBookings);
+
+            alert('Booking submitted successfully! We will contact you soon.');
+            closeBookingModal();
+            event.target.reset();
+        }
+
+        function submitContactForm(event) {
+            event.preventDefault();
+            
+            const contactData = {
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                email: document.getElementById('contactEmail').value,
+                phone: document.getElementById('contactPhone').value,
+                message: document.getElementById('contactMessage').value,
+                timestamp: new Date().toISOString()
+            };
+
+            // Save to local storage
+            const existingContacts = getFromLocalStorage('contacts') || [];
+            existingContacts.push(contactData);
+            saveToLocalStorage('contacts', existingContacts);
+
+            alert('Message sent successfully! We will get back to you soon.');
+            event.target.reset();
+        }
+
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('newsletterEmail').value;
+            const newsletterData = {
+                email: email,
+                timestamp: new Date().toISOString()
+            };
+
+            // Save to local storage
+            const existingSubscribers = getFromLocalStorage('newsletter') || [];
+            existingSubscribers.push(newsletterData);
+            saveToLocalStorage('newsletter', existingSubscribers);
+
+            alert('Successfully subscribed! Check your email for the 15% discount code.');
+            event.target.reset();
+        }
+
+        // Set minimum date to today for booking
+        document.addEventListener('DOMContentLoaded', function() {
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('pickupDate').setAttribute('min', today);
+            document.getElementById('returnDate').setAttribute('min', today);
+        });
+
+        // Close modal when clicking outside
+        document.getElementById('bookingModal').addEventListener('click', function(event) {
+            if (event.target === this) {
+                closeBookingModal();
+            }
+        });
+
+        // Smooth scroll for navigation links
+        document.addEventListener('DOMContentLoaded', function() {
+            const navLinks = document.querySelectorAll('a[href^="#"]');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href').substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
